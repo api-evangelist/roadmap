@@ -26,6 +26,19 @@ than a second copy of the truth.
 Status is the issue state. Open means planned or in progress; closed means shipped or dropped,
 and the closing comment says which.
 
+## The three planning surfaces
+
+They do not overlap, and which one a thing belongs on is usually obvious once you know the split.
+
+| Surface | Covers | Where |
+|---|---|---|
+| **APIs.io road map** | APIs.io itself — search, the site, the rating, the add-an-API pipeline | [apis.io/roadmap](https://apis.io/roadmap/) |
+| **Production queue** | The research line that publishes on a cadence — Industry and Standard Reports, Insights Bundles, Leader Shorts | [papers.apievangelist.com/queue](https://papers.apievangelist.com/queue/) |
+| **This road map** | Everything else across the network, and anything that does not fit the other two | you are here |
+
+The queue answers "what publishes next" and runs on its own order. This repo answers "what should
+we build or fix next" and does not.
+
 ## Where this is not the right place
 
 - **Asking us to change your listing** — add, rescore, correct, or delist your API in the
