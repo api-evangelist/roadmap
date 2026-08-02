@@ -1,0 +1,24 @@
+name: Work item
+description: Something to be done across the API Evangelist network.
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+      description: The work, in a sentence or two.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why now
+      description: What prompted it — a request, a defect found, a gap in coverage.
+  - type: textarea
+    id: where
+    attributes:
+      label: Where it lands
+      description: Which repos or surfaces this actually changes. Link them.
+  - type: textarea
+    id: done
+    attributes:
+      label: What done looks like

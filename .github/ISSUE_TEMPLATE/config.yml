@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Change your API listing
+    url: https://github.com/api-search/inbox
+    about: Add, rescore, correct, or delist your API on APIs.io.
+  - name: APIs.io roadmap
+    url: https://apis.io/roadmap/
+    about: The reader-facing view of what is shipping on APIs.io.
