@@ -22,9 +22,48 @@ than a second copy of the truth.
 | `area:support` | How people reach us and how requests get handled |
 | `area:research` | Reports, papers, and the analysis behind them |
 | `area:tooling` | Governance tools, MCP servers, developer surfaces |
+| `rubric` | Changes the Kin Score rubric itself. **Frozen between releases** — see below |
+| `score-moving` | Does not change the rubric, but moves published scores. Work anytime; publishes on a release date |
 
 Status is the issue state. Open means planned or in progress; closed means shipped or dropped,
 and the closing comment says which.
+
+## The Kin Score release freeze
+
+**The Kin Score ships on dates, not when a change happens to be ready.** As of **0.22.0
+(2026-09-13)** the rubric is frozen, and the next three releases are pinned to the fall
+conference run:
+
+| Milestone | Date | Event | Expected |
+|---|---|---|---|
+| [Kin Score — London](https://github.com/api-evangelist/roadmap/milestone/1) | 2026-09-30 | API Days London, 30 Sep – 1 Oct | 0.23.0 |
+| [Kin Score — Stockholm](https://github.com/api-evangelist/roadmap/milestone/2) | 2026-10-13 | Nordic APIs Platform Summit, 12–14 Oct | 0.24.0 |
+| [Kin Score — Paris](https://github.com/api-evangelist/roadmap/milestone/3) | 2026-12-01 | FOST / API Days Paris, 1–3 Dec | 0.25.0 |
+
+The FOST / API Days **Australia** session (Melbourne, 28 October, remote) sits between Stockholm
+and Paris and **runs on the Stockholm release** — it is a session, not a release.
+
+### Why
+
+A rating people are asked to act on has to be predictable enough to act on. If the rubric moves
+whenever a change lands, a provider who does the work has no way to know which version graded
+them, and "your score went up" is not a sentence anyone can plan around. Publishing on announced
+dates gives providers a window to prepare — *you have three weeks, here is what changes, update
+your listing and be part of the release* — and it gives each release somewhere to be explained
+out loud.
+
+### What this means for an issue
+
+- **`rubric` — do not work it between releases.** New checks, changed checks, re-weighted facets,
+  re-cut bands, new layers. These queue against a milestone and ship on that date.
+- **`score-moving` — work it anytime, publish on a release date.** Harvest gaps, stale artifacts,
+  a check that reads the wrong thing. The rubric is unchanged, but published numbers move, so
+  providers still deserve the same warning.
+- **`bug` with no score impact — work it anytime, ship it anytime.** The freeze protects the
+  published rating, not the repo.
+
+A bug that happens to be in scoring code is still a bug. The test is not *which file does this
+touch* but *does a provider's published number change, and would they be surprised by it*.
 
 ## The three planning surfaces
 
