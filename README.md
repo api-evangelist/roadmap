@@ -1,3 +1,4 @@
+```markdown
 # API Evangelist Road Map
 
 Where work across the API Evangelist network gets aggregated and tracked in the open.
@@ -27,6 +28,16 @@ than a second copy of the truth.
 
 Status is the issue state. Open means planned or in progress; closed means shipped or dropped,
 and the closing comment says which.
+
+## Security Notice / Active Hardening: OAuth DCR & Redirect URI Validation
+
+Following responsible disclosure (Mamun Khanka, 2026-09-21), we are hardening our OAuth Dynamic Client Registration (DCR) pipeline. 
+
+**Design Decision:** Keyless DCR per RFC 7591 remains **open** to support seamless MCP agent self-registration. Requiring initial access tokens or manual approval breaks agent onboarding and will not be adopted. Instead, we are implementing the following mitigations:
+- **Scope & Severity Audit:** Confirm what OAuth-authorized clients can access (scopes to data) to establish exact threat severity.
+- **Strict Redirect URI Enforcement:** Constrain and validate `redirect_uri` at `/authorize` (exact-match against the client's registered set; rejecting open redirects).
+- **Unverified Client Consent:** Update the consent screen to explicitly flag dynamically-registered clients as **unverified** (preventing name-spoofing first-party confusion).
+- **Reporter Liaison:** Acknowledge, credit, and communicate our hardening path while preserving intentional MCP open DCR design.
 
 ## The Kin Score release freeze
 
@@ -71,23 +82,4 @@ They do not overlap, and which one a thing belongs on is usually obvious once yo
 
 | Surface | Covers | Where |
 |---|---|---|
-| **APIs.io road map** | APIs.io itself — search, the site, the rating, the add-an-API pipeline | [apis.io/roadmap](https://apis.io/roadmap/) |
-| **Production queue** | The research line that publishes on a cadence — Industry and Standard Reports, Insights Bundles, Leader Shorts | [papers.apievangelist.com/queue](https://papers.apievangelist.com/queue/) |
-| **This road map** | Everything else across the network, and anything that does not fit the other two | you are here |
-
-The queue answers "what publishes next" and runs on its own order. This repo answers "what should
-we build or fix next" and does not.
-
-## Where this is not the right place
-
-- **Asking us to change your listing** — add, rescore, correct, or delist your API in the
-  [APIs.io Inbox](https://github.com/api-search/inbox), or on your own provider repo.
-- **Something specific to one provider's profile** — open it on that provider's repo under
-  [api-evangelist](https://github.com/orgs/api-evangelist/repositories).
-- **APIs.io site and search direction** — the public [APIs.io roadmap](https://apis.io/roadmap/)
-  is the reader-facing view; the work behind it gets tracked here.
-
-## Weighing in
-
-Open an issue. Suggestions about what to prioritize are as welcome as bug reports — a lot of what
-ends up here started as someone pointing out something that was not working.
+| **APIs.io road map** | APIs.io itself — search, the site, the rating, the add-an-API pipeline |
